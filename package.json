@@ -1,0 +1,34 @@
+{
+  "name": "@ts-tool-kit/basic",
+  "version": "1.0.0",
+  "description": "Some simple tools for TypeScript, it will help your daily development",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --project ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordazzi/ecma-async-loop.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "ts",
+    "js",
+    "angular",
+    "singleton",
+    "service",
+    "kit",
+    "enum",
+    "guard"
+  ],
+  "author": "Ricardo Azzi Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lordazzi/ecma-async-loop/issues"
+  },
+  "homepage": "https://github.com/lordazzi/ecma-async-loop#readme",
+  "devDependencies": {
+    "typescript": "3.7.3"
+  }
+}
