@@ -1,9 +1,9 @@
 /**
  * Singleton decorator
  */
-type InstatiableClass<T extends any> = (new (...args: any[]) => T) & { instance?: T; };
+export type InstatiableClass<T extends any> = (new (...args: any[]) => T) & { instance?: T; };
 
-function Singleton<T extends any>() {
+export function Singleton<T extends any>() {
 
   return (instatiable: InstatiableClass<T>) => {
 
