@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lordazzi/ecma-async-loop.git"
+    "url": "git+https://github.com/lordazzi/ts-tooling.git"
   },
   "keywords": [
     "typescript",
@@ -23,9 +23,9 @@
   "author": "Ricardo Azzi Silva",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lordazzi/ecma-async-loop/issues"
+    "url": "https://github.com/lordazzi/ts-tooling/issues"
   },
-  "homepage": "https://github.com/lordazzi/ecma-async-loop#readme",
+  "homepage": "https://github.com/lordazzi/ts-tooling#readme",
   "devDependencies": {
     "typescript": "3.7.3"
   }
