@@ -11,10 +11,8 @@
     "url": "git+https://github.com/lordazzi/ecma-async-loop.git"
   },
   "keywords": [
-    "javascript",
     "typescript",
     "ts",
-    "js",
     "angular",
     "singleton",
     "service",
