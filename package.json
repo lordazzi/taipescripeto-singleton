@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/lordazzi/ts-tools#readme",
   "devDependencies": {
-    "typescript": "3.7.3"
+    "typescript": "3.8.3"
   }
 }
