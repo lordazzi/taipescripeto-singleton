@@ -1,5 +1,5 @@
 {
-  "name": "@typescripeto/basic",
+  "name": "@taipescripeto/basic",
   "version": "1.0.2",
   "description": "Some simple tools for TypeScript, it will help your daily development",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lordazzi/typescripeto-basic.git"
+    "url": "git+https://github.com/lordazzi/taipescripeto-basic.git"
   },
   "publishConfig": {
     "access": "public"
@@ -26,9 +26,9 @@
   "author": "Ricardo Azzi Silva",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lordazzi/typescripeto-basic/issues"
+    "url": "https://github.com/lordazzi/taipescripeto-basic/issues"
   },
-  "homepage": "https://github.com/lordazzi/typescripeto-basic#readme",
+  "homepage": "https://github.com/lordazzi/taipescripeto-basic#readme",
   "devDependencies": {
     "typescript": "3.8.3"
   },

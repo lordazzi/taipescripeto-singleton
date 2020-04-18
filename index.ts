@@ -7,11 +7,8 @@ export function Singleton<T extends any>() {
 
   return (instatiable: InstatiableClass<T>) => {
 
-    function isSingleton() {
-      const args = [];
-      for (let i = 0; i < arguments.length; i++) {
-        args.push(arguments[i]);
-      }
+    function IsSingleton() {
+      const args = [].slice.call(arguments);
 
       if (!instatiable.instance) {
         instatiable.instance = new instatiable(...args);
@@ -20,23 +17,22 @@ export function Singleton<T extends any>() {
       return instatiable.instance;
     }
 
-    isSingleton.prototype = instatiable.prototype;
-    return isSingleton;
+    IsSingleton.prototype = instatiable.prototype;
+    return IsSingleton;
   }
 }
 
 /**
  * Enum Type Guard
  */
-export function enumTypeGuard<T extends string | number>(
-  nativaValue: any, enumeration: { [prop in T]: T }
-): nativaValue is T {
-  const enumAsObject: {
-    [prop: string]: string | number
-  } = Object(enumeration);
+export function enumTypeGuard<EnumType extends string | number>(
+  value: any, enumeration: { [prop in EnumType]: EnumType }
+): value is EnumType {
+  const enumAsObject: { [prop: string]: string | number } = Object(enumeration);
+  //  includes is not compatible with some browsers
   const indexNotFound = -1;
 
   return Object.keys(enumeration).map(
     key => enumAsObject[key]
-  ).indexOf(nativaValue) !== indexNotFound;
+  ).indexOf(value) !== indexNotFound;
 }
