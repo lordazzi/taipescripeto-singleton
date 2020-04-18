@@ -1,3 +1,5 @@
+# Enum Type Guard
+
 ## About
 A type guard is a method or keyword with power of something like cast in TypeScript.
 When a type guard is used to check the type of an information in a conditional structure, the following code assume the validated type as the information type.
@@ -9,7 +11,7 @@ This feature is basically the Type Guard to identify enum data.
 ## Usage
 
 ```typescript
-import { enumTypeGuard } from "./index";
+import { enumTypeGuard } from '@taipescripeto/basic';
 
 /**
  * The application domain
@@ -41,7 +43,7 @@ function isPokemon(pokemonIGuess: unknown): pokemonIGuess is Pokemon {
 
   //  ignore that
   const someObject = pokemonIGuess as { [prop: string]: unknown };
-s
+
   //  the type check
   if (
     !(typeof someObject.name === 'string' &&
@@ -59,4 +61,4 @@ if (isPokemon(externalDataAboutPokemon)) {
 ```
 
 You can see in this print the TypeScript recognizing the external data as an enum:
-![Type Guard example](enum-type-guard-working.png)
+![Type Guard example](./imgs/enum-type-guard-working.png)
