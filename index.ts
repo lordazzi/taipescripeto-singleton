@@ -1,26 +1,48 @@
 /**
  * Singleton decorator
  */
-export type InstatiableClass<T extends any> = (new (...args: any[]) => T) & { instance?: T; };
+// export type InstatiableClass<InstanceType extends any> = (new (...args: any[]) => InstanceType) & { instance?: InstanceType; };
+// export type FunctionDecorator<InstanceType> = (instatiable: InstatiableClass<InstanceType>) => InstatiableClass<InstanceType>;
 
-export function Singleton<T extends any>() {
+// export function Singleton<InstanceType extends any>(): FunctionDecorator<InstanceType> {
 
-  return (instatiable: InstatiableClass<T>) => {
+//   return (Instatiable: InstatiableClass<InstanceType>) => {
 
-    function IsSingleton() {
+//     function IsSingleton(): InstanceType {
+//       const args = [].slice.call(arguments);
+
+//       if (!Instatiable.instance) {
+//         Instatiable.instance = new Instatiable(...args);
+//       }
+
+//       return Instatiable.instance;
+//     }
+
+//     IsSingleton.prototype = Instatiable.prototype;
+//     return IsSingleton as Object as InstatiableClass<InstanceType>;
+//   };
+// }
+
+export function Singleton<T = any>(): any {
+
+  return (Instatiable: any) => {
+
+    function IsSingleton(): any {
       const args = [].slice.call(arguments);
 
-      if (!instatiable.instance) {
-        instatiable.instance = new instatiable(...args);
+      if (!Instatiable.instance) {
+        Instatiable.instance = new Instatiable(...args);
       }
 
-      return instatiable.instance;
+      return Instatiable.instance;
     }
 
-    IsSingleton.prototype = instatiable.prototype;
+    IsSingleton.prototype = Instatiable.prototype;
+    Object.assign(IsSingleton, Instatiable);
     return IsSingleton;
-  }
+  };
 }
+
 
 /**
  * Enum Type Guard
