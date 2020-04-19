@@ -33,14 +33,15 @@ export function Singleton<InstanceType extends any>(): any {
 /**
  * Enum Type Guard
  */
-export function enumTypeGuard<EnumType extends string | number>(
-  value: any, enumeration: { [prop in EnumType]: EnumType }
-): value is EnumType {
+export function enumTypeGuard<EnumAttribute extends string, EnumValue extends string | number>(
+  value: unknown, enumeration: { [prop in EnumAttribute]: EnumValue }
+): value is EnumValue {
   const enumAsObject: { [prop: string]: string | number } = Object(enumeration);
   //  includes is not compatible with some browsers
   const indexNotFound = -1;
 
-  return Object.keys(enumeration).map(
-    key => enumAsObject[key]
-  ).indexOf(value) !== indexNotFound;
+  return Object
+    .keys(enumeration)
+    .map(key => enumAsObject[key])
+    .indexOf(<any>value) !== indexNotFound;
 }
