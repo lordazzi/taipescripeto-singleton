@@ -1,8 +1,5 @@
 {
   "compileOnSave": false,
-  "exclude": [
-    "**/*.spec.ts"
-  ],
   "compilerOptions": {
     "declaration": true,
     "strict": true,
