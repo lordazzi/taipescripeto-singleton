@@ -1,48 +1,34 @@
+export type InstatiableClass<InstanceType extends any> = (new (...args: any[]) => InstanceType)
+  & { instance?: InstanceType; } & { [staticStuff: string]: any };
+export type FunctionDecorator<InstanceType> = (instatiable: InstatiableClass<InstanceType>) => InstatiableClass<InstanceType>;
+
 /**
  * Singleton decorator
  */
-// export type InstatiableClass<InstanceType extends any> = (new (...args: any[]) => InstanceType) & { instance?: InstanceType; };
-// export type FunctionDecorator<InstanceType> = (instatiable: InstatiableClass<InstanceType>) => InstatiableClass<InstanceType>;
+export function Singleton<InstanceType extends any>(): any {
 
-// export function Singleton<InstanceType extends any>(): FunctionDecorator<InstanceType> {
+  return (instatiable: any) => {
+    const Instatiable: InstatiableClass<InstanceType> = instatiable;
 
-//   return (Instatiable: InstatiableClass<InstanceType>) => {
-
-//     function IsSingleton(): InstanceType {
-//       const args = [].slice.call(arguments);
-
-//       if (!Instatiable.instance) {
-//         Instatiable.instance = new Instatiable(...args);
-//       }
-
-//       return Instatiable.instance;
-//     }
-
-//     IsSingleton.prototype = Instatiable.prototype;
-//     return IsSingleton as Object as InstatiableClass<InstanceType>;
-//   };
-// }
-
-export function Singleton<T = any>(): any {
-
-  return (Instatiable: any) => {
-
-    function IsSingleton(): any {
+    const IsSingleton = function (): InstanceType {
       const args = [].slice.call(arguments);
+
+      if (Instatiable.prototype !== this.constructor.prototype) {
+        return new Instatiable(...args);
+      }
 
       if (!Instatiable.instance) {
         Instatiable.instance = new Instatiable(...args);
       }
 
       return Instatiable.instance;
-    }
+    } as Function as InstatiableClass<InstanceType>;
 
     IsSingleton.prototype = Instatiable.prototype;
-    Object.assign(IsSingleton, Instatiable);
-    return IsSingleton;
+    Object.keys(Instatiable).forEach(staticStuff => IsSingleton[staticStuff] = Instatiable[staticStuff]);
+    return IsSingleton as Object as InstatiableClass<InstanceType>;
   };
 }
-
 
 /**
  * Enum Type Guard
