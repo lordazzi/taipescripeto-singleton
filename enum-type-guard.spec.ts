@@ -1,4 +1,4 @@
-import { enumTypeGuard } from '.';
+import { enumTypeGuard } from './index';
 
 enum PokemonType {
   FIRE = 'FIRE',
@@ -21,7 +21,7 @@ enum CrossOver {
   VACCINE = 3
 }
 
-describe('Singleton', () => {
+describe('[Enum Type Guard]', () => {
   it('Enum com string', () => {
     const pokemon1 = JSON.parse('{"tipo":"FIRE"}');
     const pokemon2 = JSON.parse('{"tipo":"FLAME"}');

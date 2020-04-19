@@ -20,7 +20,7 @@ class OldSchoolSingleton {
 
 class ExtendedService extends InstantiableService { }
 
-describe('Singleton', () => {
+describe('[Singleton Decorator]', () => {
   it('Singleton sem nada', () => {
     const instance1 = new InstantiableService();
     const instance2 = new InstantiableService();
