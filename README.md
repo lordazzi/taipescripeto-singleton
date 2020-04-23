@@ -9,7 +9,7 @@ The Singleton Decorator to garantee
 
 ## Installation
 ```bash
-npm install @taipescripeto/singleton
+npm install @taipescripeto/singleton --save
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ This is a decorator @Singleton() to make you class single.
 Compatible with most browsers, even old ones
 
 ```typescript
-import { Singleton } from '@taipescripeto/basic';
+import { Singleton } from '@taipescripeto/singleton';
 
 @Singleton()
 class SomeBusinessService {
@@ -33,7 +33,7 @@ new SomeBusinessService() === new SomeBusinessService();
 
 If you like an old school singleton implementation, you can do that:
 ```typescript
-import { Singleton } from '@taipescripeto/basic';
+import { Singleton } from '@taipescripeto/singleton';
 
 @Singleton()
 class SomeBusinessService {
@@ -67,7 +67,7 @@ When logging a bug, please be sure to include the following:
 You can try to update the library to the last version to see if the bug has already been fixed.
 
 ### 3. Do not create a duplicate issue
-[Search the existing issues](https://github.com/lordazzi/taipescripeto-basic/search?type=Issues) before logging a new one.
+[Search the existing issues](https://github.com/lordazzi/taipescripeto-singleton/search?type=Issues) before logging a new one.
 
 Some search tips:
  * *Don't* restrict your search to only open issues. An issue with a title similar to yours may have been closed as a duplicate of one with a less-findable title.
