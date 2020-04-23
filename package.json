@@ -1,6 +1,6 @@
 {
   "name": "@taipescripeto/singleton",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A decorator to force classes generate only one instance",
   "scripts": {
     "build": "tsc --project tsconfig.app.json",

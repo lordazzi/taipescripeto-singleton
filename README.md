@@ -3,7 +3,7 @@ The Singleton Decorator to garantee
 
 > taipescripeto singulus
 
-[![npm version](https://badge.fury.io/js/@taipescripeto/singleton.svg)](https://badge.fury.io/js/@taipescripeto/singleton)
+[![npm version](https://badge.fury.io/js/%40taipescripeto%2Fsingleton.svg)](https://badge.fury.io/js/%40taipescripeto%2Fsingleton)
 [![Build Status](https://travis-ci.org/lordazzi/taipescripeto-singleton.svg?branch=master)](https://travis-ci.org/lordazzi/taipescripeto-singleton)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/lordazzi/taipescripeto-singleton/blob/master/LICENSE)
 
