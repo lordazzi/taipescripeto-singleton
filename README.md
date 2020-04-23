@@ -1,7 +1,7 @@
-# TypeScript basic
-Some simple tools for TypeScript, it will help your daily development
+# TypeScript Singleton
+The Singleton Decorator to garantee
 
-> taipescripeto ferramento
+> taipescripeto singulus
 
 [![npm version](https://badge.fury.io/js/@taipescripeto/singleton.svg)](https://badge.fury.io/js/@taipescripeto/singleton)
 [![Build Status](https://travis-ci.org/lordazzi/taipescripeto-singleton.svg?branch=master)](https://travis-ci.org/lordazzi/taipescripeto-singleton)
