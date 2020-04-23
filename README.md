@@ -3,32 +3,55 @@ Some simple tools for TypeScript, it will help your daily development
 
 > taipescripeto ferramento
 
-[![npm version](https://badge.fury.io/js/taipescripeto-basic.svg)](https://badge.fury.io/js/taipescripeto-basic)
-[![Build Status](https://travis-ci.org/lordazzi/taipescripeto-basic.svg?branch=master)](https://travis-ci.org/lordazzi/taipescripeto-basic)
-[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/lordazzi/taipescripeto-basic/blob/master/LICENSE)
-
-## Library Scope
-I really like to modularize my functionality in smaller libraries, but everything in this library is too small to be an independent library and I'm willing not exaggerate modularing it.
-This library contain small structures to help engineering your typescript software, and this is this scope.
+[![npm version](https://badge.fury.io/js/@taipescripeto/singleton.svg)](https://badge.fury.io/js/@taipescripeto/singleton)
+[![Build Status](https://travis-ci.org/lordazzi/taipescripeto-singleton.svg?branch=master)](https://travis-ci.org/lordazzi/taipescripeto-singleton)
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/lordazzi/taipescripeto-singleton/blob/master/LICENSE)
 
 ## Installation
-
 ```bash
-npm install @taipescripeto/basic
+npm install @taipescripeto/singleton
 ```
 
-## Features
- - [Singleton decorator](./FEATURE-SINGLETON.md)
- - [Enum Type Guard](./FEATURE-ENUM-TYPE-GUARD.md)
+## Usage
+This is a decorator @Singleton() to make you class single.
+Compatible with most browsers, even old ones
 
-## Other amazing libs to add to your tools
-For TypeScript
- - [Calc js](https://www.npmjs.com/package/calc-js)
- - [Async Loop](https://www.npmjs.com/package/ecma-async-loop)
- - [Ecma Error Normalizer](https://www.npmjs.com/package/ecma-error-normalizer)
+```typescript
+import { Singleton } from '@taipescripeto/basic';
 
-For Angular
- - [Ng Form Helper](https://www.npmjs.com/package/ng-form-helper)
+@Singleton()
+class SomeBusinessService {
+
+  someBusinessRule(a: number, b: number): boolean {
+    return a < b;
+  }
+}
+
+//  this return true
+new SomeBusinessService() === new SomeBusinessService();
+```
+
+If you like an old school singleton implementation, you can do that:
+```typescript
+import { Singleton } from '@taipescripeto/basic';
+
+@Singleton()
+class SomeBusinessService {
+
+  static getInstance() {
+    return new SomeBusinessService();
+  }
+
+  private constructor() { }
+
+  someBusinessRule(a: number, b: number): boolean {
+    return a < b;
+  }
+}
+
+//  this return true
+SomeBusinessService.getInstance() === SomeBusinessService.getInstance();
+```
 
 ## Contributing
 

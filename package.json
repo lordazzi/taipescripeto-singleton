@@ -1,5 +1,5 @@
 {
-  "name": "@taipescripeto/basic",
+  "name": "@taipescripeto/singleton",
   "version": "1.0.2",
   "description": "Some simple tools for TypeScript, it will help your daily development",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lordazzi/taipescripeto-basic.git"
+    "url": "git+https://github.com/lordazzi/taipescripeto-singleton.git"
   },
   "publishConfig": {
     "access": "public"
@@ -28,9 +28,9 @@
   "author": "Ricardo Azzi Silva",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lordazzi/taipescripeto-basic/issues"
+    "url": "https://github.com/lordazzi/taipescripeto-singleton/issues"
   },
-  "homepage": "https://github.com/lordazzi/taipescripeto-basic#readme",
+  "homepage": "https://github.com/lordazzi/taipescripeto-singleton#readme",
   "devDependencies": {
     "@types/jasmine": "3.5.10",
     "jasmine": "3.5.0",
